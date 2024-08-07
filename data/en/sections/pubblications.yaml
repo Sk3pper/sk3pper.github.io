@@ -19,7 +19,7 @@ section:
 # - name: Security
 #   filter: "security"
 
-# your publications
+# publications
 publications:
 - title: Authentication as a service based on shamir secret sharing
   publishedIn:
