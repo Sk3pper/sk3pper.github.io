@@ -8,19 +8,7 @@ section:
   # Can optionally hide the title in sections
   # hideTitle: true
 
-# Your Skills.
-# Give a summary of you each skill in the summary section.
-
-# • Programming languages:Python,Golang,C, C++,Java,Javascript,PHP.
-# • Frameworks:Connexion(PythonFlask,OpenAPI,Swagger),Vue.js.
-# • Git;
-# Jenkins(CI/CD);
-# • Code quality and security tools: SonarQube,Semgrep,Pylint,BlackDuck,Trivy.
-# • Operating systems:Linux,bash scripting;Windows,PowerShell,ActiveDirectory.
-# • Docker,container security,distroless containers.
-# • Offense hardware and software security,penetrationtesting,Kubernetessecurity.
-# • RDMS,SQL;
-
+# Skills
 skills:
 - name: Programming languages
   icon: "fa-solid fa-code"
@@ -48,9 +36,9 @@ skills:
   logo: /images/sections/skills/Jenkins_logo.svg
   summary: ""
 
-- name: Connexion
+- name: Web framework
   logo: /images/sections/skills/Connexion.png
-  summary: "Connexion(PythonFlask, OpenAPI, Swagger), Vue.js."
+  summary: "Connexion(Python, Flask, OpenAPI, Swagger), Vue.js."
 
 
 - name: Operating systems
