@@ -1,0 +1,5 @@
+html[data-theme='dark'] {
+    h6 {
+      color: get-dark-color('heading-color');
+    }
+  }
