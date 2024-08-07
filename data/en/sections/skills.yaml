@@ -40,7 +40,6 @@ skills:
   logo: /images/sections/skills/Connexion.png
   summary: "Connexion(Python, Flask, OpenAPI, Swagger), Vue.js."
 
-
 - name: Operating systems
   # logo: /images/sections/skills/linux.png
   summary: "Linux, bash scripting; Windows, PowerShell, Active Directory."

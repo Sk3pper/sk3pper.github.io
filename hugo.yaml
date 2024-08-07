@@ -80,6 +80,26 @@ params:
     toc:
       enable: true
 
+    # Enable this to create mathematic expressions using `$$` blocks
+    math:
+      enable: true
+      services:
+        # https://katex.org/docs/autorender.html#api for more configurations
+        katex:
+          delimiters:
+          - left: $$
+            right: $$
+            display: true
+          - left: \\[
+            right: \\]
+            display: true
+          - left: $
+            right: $
+            display: false
+          - left: \\(
+            right: \\)
+            display: false
+
   # Configure footer
   footer:
     enable: true
