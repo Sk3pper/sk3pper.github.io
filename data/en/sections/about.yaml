@@ -1,0 +1,47 @@
+# section information
+section:
+  name: About
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+# your designation
+designation: Security Engineer
+# your company information
+# company:
+#   name: Example Co.
+#   url: "https://www.example.com"
+
+# your resume. this file path should be relative to you "static" directory
+# Dreprecated. Use resourceLinks instead.
+# resume: "files/resume.pdf"
+
+# a summary about you
+summary: 'Hi! my name is Andrea Bissoli and this is my personal web page where I will put my blog articles, notes and my personal carrier path. <br> <br> I am passionate about computer science and prone to fully understand how things work by asking myself "<i>why?</i>" and "<i>how?</i>". I like to expand my knowledge both theoretically and through practical activities. I ﬁnd creative solutions to problems and write code to implement them. My work experience includes:<ul><li><b>Engineer</b>: I gather everything related to engineering, being curious to comprehend the workings of every intricate detail, explore novel solutions, and embrace the creative aspects;</li><li><b>IT</b>: Coding and everything that is related to computer technology.</li> <li><b>Security</b>: In recent years, I developed interest and competence in cybersecurity, working on information security projects, security by design, writing secure code and training for hardware and software security testing.</li></ul>'
+
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+# - name: Email
+#   icon: "fas fa-envelope"
+#   url: "TBD"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.com/Sk3pper"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/andrea-b-537768116"
+
+- name: Medium
+  icon: "fa-brands fa-medium"
+  url: "https://medium.com/@sk3pper"
+
+# You can put custom buttons to link your relevant resources.
+# For example, you can put link for your resume.
+# resourceLinks:
+# - title: "My Resume"
+#   url: "files/resume.pdf"
