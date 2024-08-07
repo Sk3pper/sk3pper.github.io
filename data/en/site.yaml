@@ -2,7 +2,7 @@
 copyright: © 2024 Copyright.
 
 # Possible to change the navBar left text
-# navBarTitle: ""
+navBarTitle: " "
 
 # A disclaimer notice for the footer. Make sure you have set "params.footer.disclaimer.enable: true" in your `config.yaml` file.
 disclaimer: "disclaimer message"

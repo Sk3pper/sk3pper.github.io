@@ -1,8 +1,8 @@
 # some information about you
 name: "Andrea Bissoli"
-nickname: "Andrea"
+# nickname: "Andrea"
 # greeting message before your name. it will default to "Hi! I am" if not provided
-greeting: "Hi, I am"
+# greeting: "Hi, I am"
 # image: "images/author/Sk3pper.jpeg"
 
 # give your some contact information. they will be used in the footer
@@ -14,10 +14,10 @@ contactInfo:
   # medium: sk3pper
 
 # some summary about what you do
-summary:
-- I'm a geeky guy
-- I am IT Engineer
-- I love studying and digging in all topics that challenge me
-- I am Security Engineer
-- I like coding
-- I'm try to be a Security Researcher
+# summary:
+# - I'm a geeky guy
+# - I am IT Engineer
+# - I love studying and digging in all topics that challenge me
+# - I am Security Engineer
+# - I like coding
+# - I'm try to be a Security Researcher
