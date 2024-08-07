@@ -1,0 +1,81 @@
+# section information
+section:
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your Skills.
+# Give a summary of you each skill in the summary section.
+
+# • Programming languages:Python,Golang,C, C++,Java,Javascript,PHP.
+# • Frameworks:Connexion(PythonFlask,OpenAPI,Swagger),Vue.js.
+# • Git;
+# Jenkins(CI/CD);
+# • Code quality and security tools: SonarQube,Semgrep,Pylint,BlackDuck,Trivy.
+# • Operating systems:Linux,bash scripting;Windows,PowerShell,ActiveDirectory.
+# • Docker,container security,distroless containers.
+# • Offense hardware and software security,penetrationtesting,Kubernetessecurity.
+# • RDMS,SQL;
+
+skills:
+- name: Programming languages
+  icon: "fa-solid fa-code"
+  summary: "Python, Golang, C, C++, Java, Javascript, PHP."
+
+- name: Code quality and security tools
+  icon: "fa-solid fa-screwdriver-wrench"
+  summary: "SonarQube, Semgrep, Pylint, BlackDuck, Trivy."
+
+- name: Offense and Defense security
+  icon: "fa-solid fa-shield-halved"
+  summary: "Offense hardware and software security, penetration testing, Kubernetes security, security risk management and cyber deception area."
+
+- name: Git
+  logo: /images/sections/skills/git.png
+  summary: "Experienced with git-based development. Mostly, use Github."
+  # url: "https://git-scm.com/"
+
+- name: Docker
+  logo: /images/sections/skills/docker.svg
+  summary: "Docker, container security, distroless containers."
+  # url: "https://www.docker.com/"
+
+- name: Jenkins(CI/CD)
+  logo: /images/sections/skills/Jenkins_logo.svg
+  summary: ""
+
+- name: Connexion
+  logo: /images/sections/skills/Connexion.png
+  summary: "Connexion(PythonFlask, OpenAPI, Swagger), Vue.js."
+
+
+- name: Operating systems
+  # logo: /images/sections/skills/linux.png
+  summary: "Linux, bash scripting; Windows, PowerShell, Active Directory."
+
+- name: Database
+  summary: "RDMS, SQL"
+  icon: "fa-solid fa-database"
+
+# TODO: Show taken certifications
+# You can show your verifiable certificates from https://www.credly.com.
+# You can also show a circular bar indicating the level of expertise on a certain skill
+# badges:
+# - type: certification
+#   name: Offsec Certified Professional (OSCP)
+#   url: "https://www.credential.net/b09c11a5-d0fe-49fe-a7bc-e0aaf5e65147"
+#   badge: "https://api.accredible.com/v1/credential/generate_baked_badge?credential_id=73693188"
+
+# - type: certification
+#   name: Maldev Academy
+#   url: "https://maldevacademy.com"
+#   badge: "https://maldevacademy.com/css/images/maldev-navbar-logo.svg"
+
+# - type: certification
+#   name: Offensive Hardware Security Training
+#   url: "https://www.whid.ninja/store/product/offensive-hardware-hacking-training-exam-voucher-self-paced"
+#   badge: "https://avatars3.githubusercontent.com/u/26245612?s=400&v=4"
