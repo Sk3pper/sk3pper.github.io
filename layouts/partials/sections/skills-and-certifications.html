@@ -1,0 +1,34 @@
+{{ $sectionID := replace (lower .section.name) " " "-"  }}
+{{ if .section.id }}
+  {{ $sectionID = .section.id }}
+{{ end }}
+
+<div class="container-fluid anchor pb-5 skills-section">
+  {{ if not (.section.hideTitle) }}
+    <h1 class="text-center">
+        <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
+  {{ else }}
+    <h1 class="text-center" style="display: none">
+        <span id="{{ $sectionID }}"></span>{{ .section.name }}</h1>
+  {{ end }}
+  <div class="container d-flex-block">
+    <div class="row" id="primary-skills">
+      {{ range .skills }}
+        {{ partial "cards/my-skill.html" . }}
+      {{ end }}
+    </div>
+  </div>
+
+
+  <h1 class="text-center p-2 mt-4">
+    <span id="{{ $sectionID }}"></span>Certifications
+  </h1>
+
+  <div class="container d-flex-block">
+    <div class="row" id="certification-badges-holder">    
+      {{ range .badges }}
+        {{ partial "misc/badge.html" . }}
+      {{ end }}
+    </div>
+</div>
+</div>

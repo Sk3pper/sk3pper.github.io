@@ -3,3 +3,9 @@ html[data-theme='dark'] {
       color: get-dark-color('heading-color');
     }
   }
+
+  #certification-badges-holder{
+    display: flex;
+    justify-content: center; // Centers horizontally
+    align-items: center; // Centers vertically
+  }
