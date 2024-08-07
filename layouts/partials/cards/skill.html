@@ -15,7 +15,7 @@
           {{ $iconName := .icon }}
           <!-- before
     <h5 class="card-title"><span class="{{ $iconName }}"> {{ .name }}</span></h5> -->
-          <h5 class="card-title"><i class="{{ $iconName }}"></i> {{ $.name }}</h5>
+           <h5 class="card-title"> <span><i class="{{ $iconName }}"></i> {{ $.name }}</span></h5>
         {{ else }}
           <h5 class="card-title">{{ .name }}</h5>
         {{ end }}
