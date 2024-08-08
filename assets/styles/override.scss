@@ -11,3 +11,11 @@ html[data-theme='dark'] {
     justify-content: center; // Centers horizontally
     align-items: center; // Centers vertically
 }
+
+.education-section {
+    h1 > span {
+        margin-top: 0px; /* Size of fixed header */
+        padding-bottom: 0px;
+        display: block;
+      }
+    }
