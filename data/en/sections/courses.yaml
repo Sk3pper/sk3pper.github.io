@@ -1,0 +1,17 @@
+section:
+  name: Courses # Title of section (default: "")
+  id: courses # url id/slug of section *Required*
+  enable: true # Boolean to determine if this section is enabled (default: false)
+  weight: 7 # Order to display section in (default: alphabetical followed by weight)
+  showOnNavbar: true # Boolean to determine if a link should be shown for this section on the navbar
+  hideTitle: false # Can optionally hide the title in sections (default: false)
+  template: sections/courses.html # Use "sections/education-alt.html for alternate template.
+
+# Your accomplishments
+courses:
+- name: "Kubernetes Security: from zero to hero"
+  organization:
+    name: Udemy
+    url: https://www.udemy.com
+  courseOverview: "Course description"
+  certificateURL: "https://example.com"

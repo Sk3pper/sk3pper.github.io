@@ -1,11 +1,13 @@
+@import "components/courses";
+
 html[data-theme='dark'] {
     h6 {
-      color: get-dark-color('heading-color');
+        color: get-dark-color('heading-color');
     }
-  }
+}
 
-  #certification-badges-holder{
+#certification-badges-holder{
     display: flex;
     justify-content: center; // Centers horizontally
     align-items: center; // Centers vertically
-  }
+}
