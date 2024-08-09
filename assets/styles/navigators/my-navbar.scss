@@ -3,14 +3,13 @@
       color: get-dark-color('accent-color') !important;
       border-bottom: 0px solid get-dark-color('accent-color') !important;
       background: rgba(get-dark-color('accent-color'), 0.1);
-      border-radius: 10px;
     }@else{
       color: get-light-color('accent-color') !important;
       border-bottom: 0px solid get-light-color('accent-color') !important;
       background: rgba(get-light-color('accent-color'), 0.1);
-      // border-radius: 10px;
     }
 
+    border-radius: 10px;
     @include transition();
   }
   
@@ -28,7 +27,6 @@
     background-color: get-light-color('bg-primary');
     
     // add bottom border to the navbar
-    border-top: 2px solid #1a202c; // Equivalent to border-gray-900
     border-bottom: 3px solid rgba(168, 162, 158, 0.1); // Equivalent to border-b-stone-200/10
 
     @include transition();
