@@ -7,6 +7,9 @@ on:
   
 jobs:
     deploy-to-gh-pages:
+      permissions:
+        contents: write
+
       runs-on: ubuntu-latest
       steps:
       # checkout to the commit that has been pushed
