@@ -18,14 +18,15 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 60px;
+    height: 70px;
     z-index: 99999;
     margin: 0px;
     padding-top: 0.4rem;
     color: get-light-color('heading-color');
     text-align: center;
     background-color: get-light-color('bg-primary');
-    
+    font-size: 1.5rem;
+
     // add bottom border to the navbar
     border-bottom: 3px solid rgba(168, 162, 158, 0.1); // Equivalent to border-b-stone-200/10
 
@@ -65,7 +66,10 @@
         }
       }
     }
-  
+
+    .nav-link{
+      margin-left: 7px;
+    }
     .navbar-nav .active {
       @include nav-item-hover-effect();
     }
