@@ -30,8 +30,12 @@
       "postcss-cli": "github.com/hugo-toha/toha/v4"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "@fontsource/anton": "^5.0.20",
+    "@fontsource/smooch": "^5.0.20"
+  },
   "devDependencies": {
+    "@fontsource/luckiest-guy": "^5.0.19",
     "@fontsource/mulish": "4.5.13",
     "@fortawesome/fontawesome-free": "^6.2.0",
     "autoprefixer": "^10.4.13",

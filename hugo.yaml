@@ -6,8 +6,16 @@ module:
   mounts:
   - source: ./node_modules/flag-icon-css/flags
     target: static/flags
+  # different fonts to use from https://fontsource.org/
   - source: ./node_modules/@fontsource/mulish/files
     target: static/files
+  - source: ./node_modules/@fontsource/luckiest-guy/files
+    target: static/files
+  - source: ./node_modules/@fontsource/anton/files
+    target: static/files
+  - source: ./node_modules/@fontsource/smooch/files
+    target: static/files
+  # contains the font files used by KaTeX, a popular library for rendering LaTeX math in web pages
   - source: ./node_modules/katex/dist/fonts
     target: static/fonts
 
