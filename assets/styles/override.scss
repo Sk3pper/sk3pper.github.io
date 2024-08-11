@@ -33,6 +33,11 @@ html[data-theme='dark'] {
 .certificate-badge{
     // padding-left: 2rem;
     // padding-right: 2rem;
+    
+    @include media('>=medium') {
+        width: 200%;  // Adjust this percentage as needed
+        height: auto; // Maintain aspect ratio
+    }
 
     @include media('<=small') {
         width: 50%;  // Adjust this percentage as needed
