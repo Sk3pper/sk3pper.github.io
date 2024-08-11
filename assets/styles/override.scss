@@ -50,3 +50,13 @@ body {
 #home {
     padding-top: 5rem !important;
 }
+
+.certificate-badge{
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @include media('<=small') {
+        width: 50%;  // Adjust this percentage as needed
+        height: auto; // Maintain aspect ratio
+    }
+}
