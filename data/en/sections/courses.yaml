@@ -7,7 +7,7 @@ section:
   hideTitle: false # Can optionally hide the title in sections (default: false)
   template: sections/courses.html # Use "sections/education-alt.html for alternate template.
 
-# Your accomplishments
+# Your courses
 courses:
 - name: "Kubernetes Security: from zero to hero"
   organization:

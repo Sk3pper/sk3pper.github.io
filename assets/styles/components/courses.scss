@@ -3,12 +3,12 @@
   
     .card {
       background: get-light-color('bg-card');
-      border-top: 2px solid get-light-color('accent-color');
+      border-top: 5px solid get-light-color('course-top-border');
       height: 100%;
   
       &:hover,
       &:focus {
-        border-top: 2px solid get-light-color('hover-over-accent-color');
+        border-top: 2px solid get-light-color('course-top-border');
       }
   
       .card-header {
@@ -61,14 +61,14 @@
   }
 
   html[data-theme='dark'] {
-    .accomplishments-section {
+    .courses-section {
       .card {
         background: get-dark-color('bg-card');
-        border-top: 2px solid get-dark-color('accent-color');
+        border-top: 5px solid get-dark-color('course-top-border');
   
         &:hover,
         &:focus {
-          border-top: 2px solid get-dark-color('hover-over-accent-color');
+          border-top: 2px solid get-dark-color('course-top-border');
         }
   
         .card-header {

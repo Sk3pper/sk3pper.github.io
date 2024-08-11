@@ -27,7 +27,7 @@
     font-size: 1.5rem;
 
     // add bottom border to the navbar
-    border-bottom: 3px solid rgba(168, 162, 158, 0.1); // Equivalent to border-b-stone-200/10
+    border-bottom: 3px solid #ff791a; // Equivalent to border-b-stone-200/10
 
     @include transition();
   
@@ -219,6 +219,8 @@
     .top-navbar {
       color: get-dark-color('heading-color');
       background-color: get-dark-color('bg-primary');
+      // add bottom border to the navbar
+      border-bottom: 3px solid rgba(168, 162, 158, 0.1); // Equivalent to border-b-stone-200/10
   
       .navbar-brand {
         color: get-dark-color('heading-color');
