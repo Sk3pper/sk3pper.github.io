@@ -7,12 +7,6 @@ html[data-theme='dark'] {
     }
 }
 
-#certification-badges-holder{
-    display: flex;
-    justify-content: center; // Centers horizontally
-    align-items: center; // Centers vertically
-}
-
 #course-card-holder{
     display: flex;
     justify-content: center; // Centers horizontally
@@ -51,12 +45,23 @@ body {
     padding-top: 5rem !important;
 }
 
+#certification-badges-holder{
+    display: flex;
+    justify-content: center; // Centers horizontally
+    align-items: center; // Centers vertically
+}
+
 .certificate-badge{
-    padding-left: 2rem;
-    padding-right: 2rem;
+    // padding-left: 2rem;
+    // padding-right: 2rem;
 
     @include media('<=small') {
         width: 50%;  // Adjust this percentage as needed
+        height: auto; // Maintain aspect ratio
+    }
+
+    @include media('<=tiny') {
+        width: 30%;  // Adjust this percentage as needed
         height: auto; // Maintain aspect ratio
     }
 }
