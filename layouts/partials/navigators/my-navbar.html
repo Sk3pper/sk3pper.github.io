@@ -24,7 +24,7 @@
 {{ if $mainLogo }}
   {{ $mainLogo = resources.Get $mainLogo}}
   {{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
-    {{ $mainLogo = $mainLogo.Resize "42x" }}
+    {{ $mainLogo = $mainLogo.Resize "1563x" }}
   {{ end }}
   {{ $mainLogo = $mainLogo.RelPermalink}}
 {{ end }}
@@ -32,7 +32,7 @@
 {{ if $invertedLogo }}
   {{ $invertedLogo = resources.Get $invertedLogo}}
   {{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
-    {{ $invertedLogo = $invertedLogo.Resize "42x" }}
+    {{ $invertedLogo = $invertedLogo.Resize "1563x" }}
   {{ end }}
   {{ $invertedLogo = $invertedLogo.RelPermalink}}
 {{ end }}
