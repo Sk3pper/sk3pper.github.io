@@ -1,18 +1,14 @@
 @import "components/courses";
 @import "navigators/my-navbar";
 
+// get right color for h6 items
 html[data-theme='dark'] {
     h6 {
         color: get-dark-color('heading-color');
     }
 }
 
-#course-card-holder{
-    display: flex;
-    justify-content: center; // Centers horizontally
-    align-items: center; // Centers vertically
-  }
-
+// fix space between education and above section
 .education-section {
     h1 > span {
         margin-top: 0px; /* Size of fixed header */
@@ -21,36 +17,19 @@ html[data-theme='dark'] {
     }
 }
 
-.courses-section {
-    h1 > span {
-        margin-top: 0px; /* Size of fixed header */
-        padding-bottom: 0px;
-        display: block;
-    }
-}
-
-
-// The Mulish font, we use font-weight 300 - 700
-// @import '@fontsource/luckiest-guy';
-// @import '@fontsource/anton';
-// @import '@fontsource/smooch';
-
-body {
-    background-color: get-light-color('bg-primary');
-    // font-family:  'Luckiest Guy', system-ui;
-    font-family: 'Mulish';
-  }
-
+// add padding between navbar and home section (due to problem for small device)
 #home {
     padding-top: 5rem !important;
 }
 
+// organize certificates
 #certification-badges-holder{
     display: flex;
     justify-content: center; // Centers horizontally
     align-items: center; // Centers vertically
 }
 
+// resize certificate-badge for small and tiny device
 .certificate-badge{
     // padding-left: 2rem;
     // padding-right: 2rem;
@@ -64,4 +43,9 @@ body {
         width: 30%;  // Adjust this percentage as needed
         height: auto; // Maintain aspect ratio
     }
+}
+
+// trick to disable menu icons
+.svg-inverted {
+    filter: invert(0);
 }
