@@ -13,7 +13,7 @@ menu:
     name: Playing with Unicorn framework [1]
     identifier: playing-with-unicorn-framework-1
     parent: reverse-engineering
-    weight: 500
+    weight: 800
 ---
 
 The main purposes of this article it is to learn **what is unicorn engine**, how to **install** it and understand the **main features**. Recall **general CPU architecture basic concepts** and how **memory is used and organized by the operating system** when a program is running. How to setup a project starting from a skeleton and in the end **real examples to understand APIs and different scenarios where it is possible to use the unicorn engine**.

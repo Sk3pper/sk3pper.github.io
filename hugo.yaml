@@ -190,6 +190,14 @@ params:
     # Number of posts to show to each page. Default is "12"
     pagination:
       maxPostsPerPage: 12
+
+    analytics:
+      enable: true
+      services:
+        # GoatCounter
+        goatCounter:
+          code: sk3pper # Not self-hosted
+
   # Configure footer
   footer:
     enable: true
