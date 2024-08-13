@@ -37,8 +37,8 @@ markup:
     renderer:
       unsafe: true
   tableOfContents:
-    startLevel: 2
-    endLevel: 6
+    startLevel: 1
+    endLevel: 4
     ordered: false
 
 # At least HTML and JSON are required for the main HTML content and
@@ -54,11 +54,6 @@ enableEmoji: true
 
 # Site parameters
 params:
-  # GitHub repo URL of your site
-  gitRepo: https://github.com/Sk3pper/Sk3pper.github.io
-  # Default branch of your Git repo
-  gitBranch: main
-
   # Configure the number of section title visible in the top navbar
   topNavbar:
     maxVisibleSections: 7
@@ -81,7 +76,28 @@ params:
 
     # Enable blog posts
     blog:
-      enable: false
+      enable: true
+      showAuthor: true # shows the author of post (defaults true)
+      # Share post on different social media
+      shareButtons:
+        facebook: true
+        twitter: true
+        linkedin: true
+        reddit: true
+        whatsapp: true
+        email: true
+        # tumblr: true
+        # pocket: true
+        # diaspora: true
+        # mastodon: true
+
+    # # GitHub repo URL of your site to allow readers to improve a post by making corrections
+    # gitRepo: https://github.com/Sk3pper/Sk3pper.github.io
+    # # Default branch of your Git repo
+    # gitBranch: main
+    # Specify whether you want to show Table of Contents in reading page
+    toc:
+      enable: true
 
     # Enable & configure "Notes" features
     notes:
@@ -90,10 +106,6 @@ params:
     # Enable & configure support features
     support:
       enable: false
-
-    # Specify whether you want to show Table of Contents in reading page
-    toc:
-      enable: true
 
     # Enable this to create mathematic expressions using `$$` blocks
     math:
@@ -115,6 +127,69 @@ params:
             right: \\)
             display: false
 
+    # Show tags under the post title
+    tags:
+      enable: true
+      on_card: true # enables tags in post cards
+
+    # Specify whether to show flag in the language selector. Default is true.
+    flags:
+      enable: false
+      # # If you want to use different country flag for a language, specify them here.
+      # flagOverwrites:
+      #   - languageCode: en
+      #     countryCode: us
+
+    # Enable this to use `embed-pdf` shortcode.
+    embedpdf:
+      enable: true
+
+    # Enable this to create flowcharts using shortcodes.
+    flowchart:
+      enable: true
+      services:
+        # Uncomment for `mermaid` shortcode.
+        mermaid:
+          # For config options, see: https://mermaid-js.github.io/mermaid/#/Setup?id=configuration
+          theme: forest
+
+    # Enable to use custom syntax highlight
+    # Please note, Hugo comes with it's own html based syntax highlighter.
+    # Your code block will still be syntax highlighted by hugo.
+    # For more details: https://gohugo.io/content-management/syntax-highlighting/
+    # To disable Hugo's builtin syntax highlight,
+    # see: https://gohugo.io/getting-started/configuration-markup#highlight
+    # ```
+    # # config.yaml
+    # markup:
+    #   # this disables hugo's syntax highlighting.
+    #   codeFences: false
+    # ```
+    syntaxHighlight:
+      enable: true
+      services:
+        hljs:
+          # see: https://highlightjs.readthedocs.io/en/latest/api.html#configure
+          noHighlightRe: /^no-highlight$/i
+
+    # Enable to use `video-player` shortcode
+    videoPlayer:
+      enable: true
+      services:
+        # convert .js-player class into video player via https://plyr.io/
+        # Can play HTML5 Video, Audio, Youtube, Vimeo.
+        # For more info on setup: https://github.com/sampotts/plyr#quick-setup
+        plyr:
+        # options doc: https://github.com/sampotts/plyr#options
+        # fullscreen: true
+
+    # Enable reading time support in post cards and in post pages
+    readingTime:
+      enable: false
+
+    # Number of posts to show to each page. Default is "12"
+    pagination:
+      maxPostsPerPage: 12
   # Configure footer
   footer:
     enable: true

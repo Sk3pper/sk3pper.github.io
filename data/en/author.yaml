@@ -1,23 +1,17 @@
 # some information about you
 name: "Sk3pper"
+
 # nickname: "Andrea"
 # greeting message before your name. it will default to "Hi! I am" if not provided
 # greeting: "Hi, I am"
-# image: "images/author/Sk3pper.jpeg"
+
+image: "images/author/avatar.png"
 
 # give your some contact information. they will be used in the footer
 contactInfo:
-  # email: "TBD" #
   github: Sk3pper
   linkedin: andrea-b-537768116
-  # researchgate: john-doe
   medium: sk3pper
+  # researchgate: TBD 
+  # email: TBD #
 
-# some summary about what you do
-# summary:
-# - I'm a geeky guy
-# - I am IT Engineer
-# - I love studying and digging in all topics that challenge me
-# - I am Security Engineer
-# - I like coding
-# - I'm try to be a Security Researcher
