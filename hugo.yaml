@@ -56,7 +56,7 @@ enableEmoji: true
 params:
   # Configure the number of section title visible in the top navbar
   topNavbar:
-    maxVisibleSections: 7
+    maxVisibleSections: 6
 
   # Provide logos for your site. The inverted logo will be used in the initial
   # transparent navbar and the main logo will be used in the non-transparent navbar.

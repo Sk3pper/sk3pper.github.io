@@ -62,6 +62,10 @@ html[data-theme='dark'] {
     width: 100%; /* Ensure the image fits within the container */
     transform: scale(1.9); /* Adjust the scale value to zoom in */
     transform-origin: center; /* Set the origin of the zoom to the center of the image */
+    @include media('<=small') {
+        padding-top: 80px;
+        padding-bottom: 90px;
+    }    
 }
 
 // trick to disable menu icons
