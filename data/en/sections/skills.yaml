@@ -57,13 +57,16 @@ badges:
   name: Offsec Certified Professional (OSCP)
   url: "https://www.credential.net/b09c11a5-d0fe-49fe-a7bc-e0aaf5e65147"
   badge: "https://api.accredible.com/v1/credential/generate_baked_badge?credential_id=73693188"
+  id: oscp
 
 - type: certification
   name: Maldev Academy
   url: "https://maldevacademy.com"
   badge: "https://maldevacademy.com/css/images/maldev-navbar-logo.svg"
+  id: maldevacademy
 
 - type: certification
   name: Offensive Hardware Security Training
   url: "https://www.whid.ninja/store/product/offensive-hardware-hacking-training-exam-voucher-self-paced"
   badge: "https://avatars3.githubusercontent.com/u/26245612?s=400&v=4"
+  id: ohst
