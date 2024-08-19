@@ -43,7 +43,7 @@ experiences:
     responsibilities:
     - Analysis of methodologies, design and implementation of prototype solutions for security risk management and cyber deception area;
     - Propose and investigate innovative approaches or technologies in the field of cyber security;
-    - Be up-to-date with cyber security trends and cutting edge technologies;
+    - Be up-to-date with cyber security trends and cutting-edge technologies;
 
 - company:
     name: UniCredit Services
@@ -92,7 +92,7 @@ experiences:
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/experiences/company1.jpg
     # company overview
-    overview: Teacher in an extra curricular course of "programming techniques" addressed to students of the scientific high school biennium.
+    overview: Teacher in an extracurricular course of "programming techniques" addressed to students of the scientific high school biennium.
   positions:
   - designation: Teacher
     start: September 2016
