@@ -43,7 +43,7 @@ skills:
 
 - name: Web framework
   logo: /images/sections/skills/Connexion.png
-  summary: "Connexion(Python, Flask, OpenAPI, Swagger), Vue.js."
+  summary: "Connexion(Python, Flask, OpenAPI, Swagger), VueJS."
 
 # - name: Database
 #   summary: "RDMS, SQL"
