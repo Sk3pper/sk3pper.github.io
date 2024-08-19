@@ -63,8 +63,8 @@ html[data-theme='dark'] {
     transform: scale(1.9); /* Adjust the scale value to zoom in */
     transform-origin: center; /* Set the origin of the zoom to the center of the image */
     @include media('<=small') {
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }    
 }
 
