@@ -17,6 +17,14 @@ html[data-theme='dark'] {
     }
 }
 
+// fix space between recent-posts and above section
+.recent-posts-section {
+    h1 > span {
+        margin-top: 0px; /* Size of fixed header */
+        padding-bottom: 0px;
+        display: block;
+    }
+}
 // add padding between navbar and home section (due to problem for small device)
 #home {
     padding-top: 5rem !important;

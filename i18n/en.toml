@@ -134,3 +134,6 @@ other = "Search"
 [minute]
 one = "minute"
 other = "minutes"
+
+[certifications]
+other = "Courses & Certifications"
