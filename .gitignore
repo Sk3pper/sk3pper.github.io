@@ -10,3 +10,7 @@ resources/*
 
 Note
 todo
+
+assets/jsconfig.json
+
+.vscode
