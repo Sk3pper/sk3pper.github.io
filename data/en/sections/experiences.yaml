@@ -9,7 +9,7 @@ section:
   # Can optionally hide the title in sections
   # hideTitle: true 
 
-# Your experiences
+  # Your experiences
 experiences:
 - company:
     name: ZTE Cybersecurity Lab
@@ -21,7 +21,7 @@ experiences:
     overview: The ZTE Cybersecurity Lab in Italy focuses on security testing and support for the regional markets. It serves as a collaborative platform between ZTE and various institutions, universities, and stakeholders for capacity building and knowledge transfer, including a partnership with the CNIT (National Interuniversity Consortium for Telecommunications) for technical research and testing supervision.
 
   positions:
-  - designation: Security Engineer
+  - designation: Cybersecurity Software Engineer
     start: October 2023
     responsibilities:
     - Perform cyber security assessment of ZTE products.
@@ -37,7 +37,7 @@ experiences:
     # darkLogo: /images/sections/experiences/company3.jpg
     overview: The Cyber Security R&D team performs applied security research and prototyping, as well as shaping the adoption of best practices and new technologies.
   positions:
-  - designation: Cyber Security Engineer
+  - designation: Cybersecurity Software Engineer
     start: February 2021
     end: July 2023
     responsibilities:
@@ -54,14 +54,13 @@ experiences:
     # darkLogo: /images/sections/experiences/company2.jpg
     overview: UniCredit Services provides ICT applications aimed at developing, implementing and managing the solutions for different core areas
   positions:
-  - designation: DevOps Engineer
+  - designation: Software Developer
     start: November 2019
     end: February 2021
     responsibilities:
     - Design, implementation, deployment, monitoring and troubleshooting of banking applications.
     - Implementation of monitoring automation, identification of performance bottlenecks and troubleshooting of issues, discovery and resolution of applications bugs with Splunk.
     - Management of applications production release cycles.
-
 
 - company:
     name: TIM S.p.A
@@ -71,9 +70,9 @@ experiences:
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/experiences/company1.jpg
     # company overview
-    overview: Cyber Security Analyst at the Security Operations Center TIM. Collaboration in the Incident Handling Backbone Team.
+    overview: Cybersecurity Analyst at the Security Operations Center TIM. Collaboration in the Incident Handling Backbone Team.
   positions:
-  - designation: Cyber Security Analyst
+  - designation: Cybersecurity Analyst
     start: August 2018
     end: September 2021
     # don't provide end date if you are currently working there. It will be replaced by "Present"
