@@ -8,34 +8,34 @@ section:
   # Can optionally hide the title in sections
   # hideTitle: true
 
-# filter buttons
-# buttons:
-# - name: All
-#   filter: "all"
-# - name: "Machine Learning"
-#   filter: "machinelearning"
-# - name: "Image Processing"
-#   filter: "image-processing"
-# - name: Security
-#   filter: "security"
+  # filter buttons
+  # buttons:
+  # - name: All
+  #   filter: "all"
+  # - name: "Machine Learning"
+  #   filter: "machinelearning"
+  # - name: "Image Processing"
+  #   filter: "image-processing"
+  # - name: Security
+  #   filter: "security"
 
-# publications
+  # publications
 publications:
 - title: Authentication as a service based on shamir secret sharing
   publishedIn:
     name: 2021 IEEE International Symposium on Computer Science and Intelligent Controls
     date: Nov. 2021
     url: https://ieeexplore.ieee.org/document/9644383
-  authors:
-  - name: Andrea Bissoli
-    url: https://example.com
-  - name: Fabrizio d'Amore
-    url: https://damore.diag.uniroma1.it/
+  # authors:
+  # - name: Sk3pper
+  #   url: https://sk3pper.github.io/
+  # - name: Fabrizio d'Amore
+  #   url: https://damore.diag.uniroma1.it/
   paper:
     summary: The paper presents a solution for securing password-based authentication using Shamir's $(k,n)$ threshold scheme, where $n$ password-derived secrets (shares) are created, and $k\leq n$ shares are necessary and sufficient for reconstructing the password. The solution is information-theoretically secure, with each share stored on a different host (Shareholder), requiring an attacker to compromise $k$ Shareholders to reconstruct the secret. To resist compromising the coordinating server (Dealer), the authors define a variant of Shamir's scheme where the abscissas are unknown to the Dealer and Shareholders, making reconstruction impossible even if they are compromised. The authors have designed protocols for registration and authentication, analyzed scenarios with partially/totally compromised Dealer and/or Shareholders, and developed a prototype demonstrating the correct, effective, and efficient operation of the proposed method, providing a feasibility study for future cloud-based "authentication-as-a-service" implementations.
     url: https://ieeexplore.ieee.org/document/9644383
-  categories: ["Security"]
-  tags: ["Authentication", "Shamir Secret Sharing", "Authentication as a service", "Application security"]
+  categories: [ "Security" ]
+  tags: [ "Authentication", "Shamir Secret Sharing", "Authentication as a service", "Application security" ]
 
 # - title: An Example Paper on Machine Learning
 #   publishedIn:

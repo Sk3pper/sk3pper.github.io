@@ -2,7 +2,7 @@
 title: "Playing with Unicorn framework [1]"
 date: 2024-06-21T06:00:23+06:00
 author:
-  name: Andrea Bissoli
+  name: Sk3pper
   # image: /images/author/avatar.png
 hero: /images/unicorn-framework-install-workflow.webp
 description: A practical guide to setup, use and play with unicorn-engine emulator

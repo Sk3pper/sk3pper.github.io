@@ -25,7 +25,7 @@ languages:
   en:
     languageCode: en
     languageName: English
-    title: "Andrea Bissoli"
+    title: "Sk3pper"
     weight: 1
 
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
@@ -91,11 +91,11 @@ params:
         # diaspora: true
         # mastodon: true
 
-    # # GitHub repo URL of your site to allow readers to improve a post by making corrections
-    # gitRepo: https://github.com/Sk3pper/Sk3pper.github.io
-    # # Default branch of your Git repo
-    # gitBranch: main
-    # Specify whether you want to show Table of Contents in reading page
+        # # GitHub repo URL of your site to allow readers to improve a post by making corrections
+        # gitRepo: https://github.com/Sk3pper/Sk3pper.github.io
+        # # Default branch of your Git repo
+        # gitBranch: main
+        # Specify whether you want to show Table of Contents in reading page
     toc:
       enable: true
 
@@ -140,7 +140,7 @@ params:
       #   - languageCode: en
       #     countryCode: us
 
-    # Enable this to use `embed-pdf` shortcode.
+      # Enable this to use `embed-pdf` shortcode.
     embedpdf:
       enable: true
 
@@ -180,10 +180,10 @@ params:
         # Can play HTML5 Video, Audio, Youtube, Vimeo.
         # For more info on setup: https://github.com/sampotts/plyr#quick-setup
         plyr:
-        # options doc: https://github.com/sampotts/plyr#options
-        # fullscreen: true
+          # options doc: https://github.com/sampotts/plyr#options
+          # fullscreen: true
 
-    # Enable reading time support in post cards and in post pages
+          # Enable reading time support in post cards and in post pages
     readingTime:
       enable: false
 
@@ -226,6 +226,6 @@ params:
       # provider: mailchimp
       # mailchimpURL: https://github.us1.list-manage.com/subscribe/post?u=19de52a4603135aae97163fd8&amp;id=094a24c76e
 
-    # Show/hide disclaimer notice in the footer. Default is "false".
+      # Show/hide disclaimer notice in the footer. Default is "false".
     disclaimer:
       enable: false

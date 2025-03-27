@@ -1,5 +1,5 @@
 # Copyright Notice
-copyright: © 2024 Andrea Bissoli. All rights reserved.
+copyright: © 2024 Sk3pper. All rights reserved.
 
 # Possible to change the navBar left text
 navBarTitle: " "
@@ -8,7 +8,7 @@ navBarTitle: " "
 disclaimer: "disclaimer message"
 
 # Meta description for your site.  This will help the search engines to find your site.
-description: Portfolio and personal blog of Andrea Bissoli.
+description: Portfolio and personal blog of Sk3pper.
 
 # specify the list of custom menus that you want to show in the top navbar.
 # they will be separated by a divider from the main menus.a
@@ -24,8 +24,8 @@ description: Portfolio and personal blog of Andrea Bissoli.
 # Specify OpenGraph Headers
 # Open Graph headers, are snippets of code that control how URLs are displayed when shared on social media platforms. They are part of the Open Graph protocol, which was developed by Facebook to enhance the appearance of shared content.
 openGraph:
-  title: Andrea Bissoli's Blog
+  title: Sk3pper's Blog
   type: website
-  description: Portfolio and personal blog of Andrea Bissoli.
+  description: Portfolio and personal blog of Sk3pper.
   # image: images/author/Sk3pper.png
   url: https://Sk3pper.github.io
