@@ -109,11 +109,13 @@
                 <li><span><i class="fas fa-phone-alt"></i></span> <span>{{ $value }}</span></li>
               {{ else if (eq $key "linkedin") }}
                 <li><a href={{ printf "https://www.linkedin.com/in/%s" $value }} target="_blank" rel="noopener">
-                  <span><i class="fab fa-linkedin"></i></span> <span>{{ $author.name }}</span>
+                  <span><i class="fab fa-linkedin"></i></span> 
+                  <!-- <span>{{ $author.name }}</span> -->
                 </a></li>
               {{ else if (eq $key "github") }}
                 <li><a href={{ printf "https://github.com/%s" $value }} target="_blank" rel="noopener">
-                  <span><i class="fab fa-github"></i></span> <span>{{ $value }}</span>
+                  <span><i class="fab fa-github"></i></span>
+                  <!-- <span>{{ $value }}</span> -->
                 </a></li>
               {{ else if (eq $key "researchgate") }}
                 <li><a href={{ printf "https://www.researchgate.net/profile/%s" $value }} target="_blank" rel="noopener">
@@ -121,7 +123,8 @@
                 </a></li>      
               {{ else if (eq $key "medium") }}
                 <li><a href={{ printf "https://medium.com/@%s" $value }} target="_blank" rel="noopener">
-                  <span><i class="fa-brands fa-medium"></i></span> <span>{{ $value }}</span>
+                  <span><i class="fa-brands fa-medium"></i></span> 
+                  <!-- <span>{{ $author.name }}</span> -->
                 </a></li>       
               {{ else if reflect.IsMap $value }}
                 <li>
