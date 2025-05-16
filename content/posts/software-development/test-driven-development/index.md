@@ -23,7 +23,7 @@ What disappoints me is that during university, no one ever pointed me toward the
 
 On this topic, I started with *"Clean Code* by Robert C. Martin, followed by *"Refactoring: Improving the Design of Existing Code"* by Martin Fowler. Then I read The  *"Pragmatic Programmer (20th anniversary)*" by David Thomas and Andrew Hunt, and the last one was  *"Test Driven Development by Example"* by Kent Beck.
 
-The **main purpose** of this article is to share my GitHub repository with the exercises I did while reading TDD By Example book. I hope it can be useful for others who are walking the same path.
+The **main purpose** of this article is to share my [GitHub repository](https://github.com/Sk3pper/test-driven-development-by-example) with the exercises I did while reading TDD By Example book. I hope it can be useful for others who are walking the same path.
 
 ## Lessons learned
 The TDD's goal is simple but powerful: **Write clean code that works**. But pay attention, not at the same time! Divide and conquer the problem
