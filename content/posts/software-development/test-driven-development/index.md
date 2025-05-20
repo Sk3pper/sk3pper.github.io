@@ -47,5 +47,6 @@ Another powerful concept is when implementing TDD in code it is possible there a
 The last one is when you have clean, well-tested code, you don’t need to overthink every decision. Instead of spending several minutes reasoning through a problem, make the change and run the tests - your test suite can give you an answer in seconds. This is one of the great strengths of TDD: it allows you to experiment confidently. Without tests, you're forced to rely solely on reasoning. With tests, you have the freedom to try something and quickly get feedback.
 
 ## The Code
-In my [repository](https://github.com/Sk3pper/test-driven-development-by-example) you can find the code for the **Money example** (organized by chapter, just like in the book), along with a guide to set up a minimal, terminal-based environment that lets you follow along with the exercises and clearly see each step of the process.
+In the [repository](https://github.com/Sk3pper/test-driven-development-by-example) you can find the code for the **Money example** (organized by chapter, just like in the book), along with a guide to set up a minimal, terminal-based environment that lets you follow along with the chapters and clearly see each step of the process.
 
+Additionally, the repository includes **xUnit** code and examples, featuring a clear progression through the implementation inspired by the book. It also contains an example *solution* for the **“Catch and report setUp errors”** task, demonstrating how to properly handle exceptions raised during the setUp phase of testing.
