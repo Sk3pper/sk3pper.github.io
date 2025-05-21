@@ -5,7 +5,7 @@ author:
   name: Andrea Bissoli
   # image: /images/author/avatar.png
 hero: /images/tdd-exercise-1-hero.png
-description:"A step-by-step article to implement Catch and report setUp errors exercise"
+description: "A step-by-step article to implement Catch and report setUp errors exercise"
 theme: Toha
 
 menu:
