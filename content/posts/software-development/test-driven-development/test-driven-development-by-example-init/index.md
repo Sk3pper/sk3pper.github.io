@@ -51,8 +51,8 @@ In the [repository](https://github.com/Sk3pper/test-driven-development-by-exampl
 
 Additionally, the repository includes **xUnit** code and examples, featuring a clear progression through the implementation inspired by the book. The `xUnit/` directory also includes solutions for the following tasks:
 
-- **Catch and report setUp errors**
-- **Invoke tearDown even if the test method fails**
-- **Create TestSuite from a TestCase class**
-  
+- **Catch and report setUp errors** [[source code]](https://github.com/Sk3pper/test-driven-development-by-example/tree/main/xUnit/ch22_exercise) [[article]](https://sk3pper.github.io/posts/software-development/test-driven-development/exercise-1/)
+- **Invoke tearDown even if the test method fails** [[source code]](https://github.com/Sk3pper/test-driven-development-by-example/tree/main/xUnit/ch23_exerciseA) [[article]](https://sk3pper.github.io/posts/software-development/test-driven-development/exercise-2/)
+- **Create TestSuite from a TestCase class** [[source code]](https://github.com/Sk3pper/test-driven-development-by-example/tree/main/xUnit/ch23_exerciseB) [[article]](https://sk3pper.github.io/posts/software-development/test-driven-development/exercise-3/)
+
 These examples demonstrate how to apply *Test-Driven Development (TDD) principles* in practice - step by step. They also served as a way for me to better understand the entire process and train myself through hands-on exercises..

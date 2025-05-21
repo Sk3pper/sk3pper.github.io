@@ -15,9 +15,13 @@ menu:
     parent: test-driven-development
     weight: 800
 ---
-{{< alert type="warning" >}}
+{{<alert type="warning">}}
 To gain a better understanding of the context, begin by reading the contents of the [xUnit/ch18](https://github.com/Sk3pper/test-driven-development-by-example/tree/main/xUnit) directory, where you will find the relevant code and tests that illustrate the concepts discussed in this chapter.
-{{< /alert >}}
+{{</alert>}}
+
+{{<alert type="info">}}
+It is possible to find all the source code of this exercise [here](https://github.com/Sk3pper/test-driven-development-by-example/tree/main/xUnit/ch23_exerciseB).
+{{</alert>}}
 
 # Exercise: 
 The last task to complete is creating a **Create TestSuite from a TestCase class** — that is, constructing a suite automatically from a test class.
