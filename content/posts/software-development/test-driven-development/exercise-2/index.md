@@ -5,7 +5,7 @@ author:
   name: Andrea Bissoli
   # image: /images/author/avatar.png
 hero: /images/tdd-exercise-2-hero.png
-description: A practical guide to setup, use and practice in TDD style
+description: "A step-by-step article to implement Invoke tearDown even if the test method fails exercise"
 theme: Toha
 
 menu:

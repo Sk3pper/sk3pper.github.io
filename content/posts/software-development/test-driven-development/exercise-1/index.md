@@ -1,11 +1,11 @@
 ---
-title: "Exercise: Catch and report setUp errors "
+title: "Exercise: Catch and report setUp errors"
 date: 2025-05-16T06:00:23+06:00
 author:
   name: Andrea Bissoli
   # image: /images/author/avatar.png
 hero: /images/tdd-exercise-1-hero.png
-description: A practical guide to setup, use and practice in TDD style
+description:"A step-by-step article to implement Catch and report setUp errors exercise"
 theme: Toha
 
 menu:
