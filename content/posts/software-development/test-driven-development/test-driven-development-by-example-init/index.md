@@ -1,18 +1,18 @@
 ---
 title: "TDD by example"
-date: 2025-05-16T06:00:23+06:00
+date: 2025-05-20T06:00:23+06:00
 author:
   name: Andrea Bissoli
   # image: /images/author/avatar.png
 hero: /images/tdd-icon-hero.png
-description: A practical guide to setup, use and play with unicorn-engine emulator
+description: A practical guide to setup, use and practice in TDD style
 theme: Toha
 
 menu:
   sidebar:
     name: TDD by example
-    identifier: test-driven-development-by-example
-    parent: software-development
+    identifier: test-driven-development-by-example-init
+    parent: test-driven-development
     weight: 800
 ---
 
@@ -49,4 +49,10 @@ The last one is when you have clean, well-tested code, you don’t need to overt
 ## The Code
 In the [repository](https://github.com/Sk3pper/test-driven-development-by-example) you can find the code for the **Money example** (organized by chapter, just like in the book), along with a guide to set up a minimal, terminal-based environment that lets you follow along with the chapters and clearly see each step of the process.
 
-Additionally, the repository includes **xUnit** code and examples, featuring a clear progression through the implementation inspired by the book. It also contains an example *solution* for the **“Catch and report setUp errors”** task, demonstrating how to properly handle exceptions raised during the setUp phase of testing.
+Additionally, the repository includes **xUnit** code and examples, featuring a clear progression through the implementation inspired by the book. The `xUnit/` directory also includes solutions for the following tasks:
+
+- **Catch and report setUp errors**
+- **Invoke tearDown even if the test method fails**
+- **Create TestSuite from a TestCase class**
+  
+These examples demonstrate how to apply *Test-Driven Development (TDD) principles* in practice - step by step. They also served as a way for me to better understand the entire process and train myself through hands-on exercises..
