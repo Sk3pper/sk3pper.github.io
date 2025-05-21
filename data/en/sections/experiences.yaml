@@ -12,6 +12,26 @@ section:
   # Your experiences
 experiences:
 - company:
+    name: "👀 ------ 👀"
+    url: ""
+    location: Rome (Italy) | Mostly remote work
+    # logo: /images/sections/experiences/zte-logo.png
+    # Can optionally show a different logo for dark theme
+    # darkLogo: /images/sections/experiences/company3.jpg
+    overview: "---------"
+
+  positions:
+  - designation: Cybersecurity Software Researcher
+    start: May 2025
+    responsibilities:
+    - Conducting research on vulnerabilities and emerging threats in the field of cybersecurity.
+    - Collaborating with the development team to implement product features and integrate security measures.
+    - Identifying, analyzing, and assessing product vulnerabilities.
+    - Designing and implementing countermeasures to mitigate vulnerabilities and improve product resilience.
+    - Creating technical documentation related to identified vulnerabilities and implemented solutions.
+    - Studying and analyzing new security tools and methodologies to enhance the product's capabilities.
+
+- company:
     name: ZTE Cybersecurity Lab
     url: "https://www.zte.com.cn/global/about/trust-center/lab.html"
     location: Rome (Italy)
@@ -23,6 +43,7 @@ experiences:
   positions:
   - designation: Cybersecurity Software Engineer
     start: October 2023
+    end: May 2025
     responsibilities:
     - Perform cyber security assessment of ZTE products.
     - Identify, analyze, and assess technical and organizational cyber security vulnerabilities. Document and report penetration test results to stakeholders.
