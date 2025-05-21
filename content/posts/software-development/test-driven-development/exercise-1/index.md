@@ -1,6 +1,6 @@
 ---
 title: "Exercise: Catch and report setUp errors"
-date: 2025-05-16T06:00:23+06:00
+date: 2025-05-20T06:00:23+06:00
 author:
   name: Andrea Bissoli
   # image: /images/author/avatar.png
