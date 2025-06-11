@@ -14,7 +14,7 @@ experiences:
 - company:
     name: "👀 ------ 👀"
     url: ""
-    location: Rome (Italy) | Mostly remote work
+    location: Rome (Italy) | Mostly remote
     # logo: /images/sections/experiences/zte-logo.png
     # Can optionally show a different logo for dark theme
     # darkLogo: /images/sections/experiences/company3.jpg
@@ -22,7 +22,7 @@ experiences:
 
   positions:
   - designation: Cybersecurity Software Researcher
-    start: May 2025
+    start: June 2025
     responsibilities:
     - Conducting research on vulnerabilities and emerging threats in the field of cybersecurity.
     - Collaborating with the development team to implement product features and integrate security measures.
