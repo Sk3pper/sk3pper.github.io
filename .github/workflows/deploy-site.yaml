@@ -32,12 +32,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # Match the version we used in Docker
       HUGO_VERSION: 0.146.0
-      # Use Go 1.23 to match our Docker setup
       GO_VERSION: 1.25.5
-      # Ensure node_modules are treated as production
-      NODE_ENV: production
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,7 +44,6 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          # Quotes ensure YAML treats this strictly as a string
           go-version: '${{ env.GO_VERSION }}'
 
       - name: Setup Node.js
@@ -65,21 +60,18 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      # CRITICAL STEP: Sync theme dependencies before installing NPM
       - name: Initialize Hugo Modules & NPM
         run: |
           hugo mod tidy
           hugo mod npm pack
 
       - name: Install Node.js dependencies
-        # We use 'npm install' instead of 'ci' because package-lock might be generated dynamically
         run: npm install
 
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
-          # Updated Timezone to Rome
           TZ: Europe/Rome
         run: |
           hugo \
@@ -92,7 +84,6 @@ jobs:
         with:
           path: ./public
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
