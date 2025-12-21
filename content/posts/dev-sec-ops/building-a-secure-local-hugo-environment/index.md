@@ -215,12 +215,12 @@ If you are struggling with Hugo permissions on Docker, try switching to memory r
 # 7. Resources & Further Reading
 If you want to dig deeper into the specific attacks that motivated this architecture, here are the technical analyses and incident reports from the recent waves of NPM supply chain compromises.
 
-### 🚨 Recent Incidents (2025)
+**Recent Incidents (2025)**
 - [The "Shai-Hulud" Worm Analysis (Unit 42)](https://unit42.paloaltonetworks.com/npm-supply-chain-attack/)
 - [AWS Security: Responding to Recent NPM Threats](https://aws.amazon.com/blogs/security/what-aws-security-learned-from-responding-to-recent-npm-supply-chain-threat-campaigns/)
 - [GitLab: Widespread NPM Supply Chain Attack](https://about.gitlab.com/blog/gitlab-discovers-widespread-npm-supply-chain-attack/)
 - [The "Chalk" & "Debug" Compromise (Qualys)](https://blog.qualys.com/vulnerabilities-threat-research/2025/09/10/when-dependencies-turn-dangerous-responding-to-the-npm-supply-chain-attack)
 
-### 🛡️ Hardening Guides
+**Hardening Guides**
 - [Malicious Code Hidden in NPM Packages (Cycode)](https://cycode.com/blog/malicious-code-hidden-in-npm-packages/)
 - [NPM Security Best Practices (GitHub)](https://github.com/bodadotsh/npm-security-best-practices)
