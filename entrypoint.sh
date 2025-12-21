@@ -29,4 +29,5 @@ fi
 rm -rf /tmp/public
 
 echo "STEP 4: Launching Hugo Server..."
+# --renderToMemory avoids all Linux file permission issues and boosts speed
 exec hugo server -w --bind 0.0.0.0 --port 1313 --disableFastRender --renderToMemory
