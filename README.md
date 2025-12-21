@@ -4,8 +4,8 @@ This repository contains the source code for my personal site and blog, which is
 
 ## Built With
 
-* **Hugo**: A fast and flexible static site generator.
-* **Toha Theme**: A Hugo theme designed for personal websites and blogs. You can find more information about the theme [here](https://github.com/hugo-toha/toha).
+- **Hugo**: A fast and flexible static site generator.
+- **Toha Theme**: A Hugo theme designed for personal websites and blogs. You can find more information about the theme [here](https://github.com/hugo-toha/toha).
 
 ---
 
@@ -20,8 +20,8 @@ Running `npm install` directly on a host machine allows third-party packages to 
 ### Security Measures Implemented
 
 1. **Supply Chain Hardening**:
-* **`npm ci` vs `npm install**`: I prioritize `npm ci` (Clean Install) to strictly respect the `package-lock.json`. This prevents the accidental installation of compromised "newer" versions of dependencies.
-* **`NPM_CONFIG_IGNORE_SCRIPTS=true`**: I explicitly disable package scripts globally. This blocks the most common vector for NPM malware (malicious scripts running during installation).
+- **`npm ci` vs `npm install`**: I prioritize `npm ci` (Clean Install) to strictly respect the `package-lock.json`. This prevents the accidental installation of compromised "newer" versions of dependencies.
+- **`NPM_CONFIG_IGNORE_SCRIPTS=true`**: I explicitly disable package scripts globally. This blocks the most common vector for NPM malware (malicious scripts running during installation).
 
 
 2. **Pinned Dependencies**:
@@ -78,4 +78,4 @@ docker compose up --build
 
 ```
 
-The site will be available at `http://localhost:1313`.
+The local site will be available at `http://localhost:1313`.
