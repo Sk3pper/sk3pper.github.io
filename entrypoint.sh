@@ -1,33 +1,34 @@
 #!/bin/bash
 set -e
 
-# --- STEP A: HUGO MODULES ---
-echo "-------------------------------------------------------"
-echo "STEP 1: Syncing Hugo Modules"
-echo "Description: Checking go.mod and downloading theme dependencies..."
-echo "-------------------------------------------------------"
+# --- STEP 1: GO MODULES ---
+echo "STEP 1: Syncing Hugo/Go Modules..."
+# Checking go.mod and downloading theme dependencies
 hugo mod tidy
 
-# --- STEP B: NODE MODULES ---
-echo ""
-echo "-------------------------------------------------------"
-echo "STEP 2: Preparing Node environment"
-echo "Description: Extracting package.json from modules and installing JS dependencies..."
-echo "-------------------------------------------------------"
+# --- STEP 2: GENERATE PACKAGE.JSON ---
+echo "STEP 2: Merging Theme Dependencies..."
+# Extracting package.json from modules and installing JS dependencies
 hugo mod npm pack
-npm install
 
-echo ""
-echo "-------------------------------------------------------"
-echo "STEP 3: Securing Dependencies"
-echo "Description: Running 'npm audit fix' to resolve vulnerabilities..."
-echo "-------------------------------------------------------"
-npm audit fix
+# --- STEP 3: INSTALL DEPENDENCIES ---
+echo "STEP 3: Installing Node Modules..."
 
-# --- STEP C: RUN SERVER ---
-echo ""
-echo "-------------------------------------------------------"
-echo "STEP 4: Launching Development Server"
-echo "Description: Starting Hugo with Live Reload on port 1313..."
-echo "-------------------------------------------------------"
-exec hugo server -w --bind 0.0.0.0 --port 1313 --disableFastRender
+if [ -f "package-lock.json" ]; then
+    echo "  > Lockfile found. Using 'npm ci' for reproducible, secure build."
+    # npm ci is faster and stricter. It ignores package.json if lockfile exists.
+    # We allow scripts ONLY if you explicitly set a flag, otherwise they are blocked by Dockerfile ENV
+    npm ci
+else
+    echo "  ! WARNING: No lockfile found."
+    echo "  > Running 'npm install' to generate one. PLEASE COMMIT 'package-lock.json'!"
+    npm install
+fi
+
+# --- STEP 4: RUN SERVER ---
+rm -rf /tmp/public
+
+echo "STEP 4: Launching Hugo Server..."
+# Bind to 0.0.0.0 is correct for Docker
+# We build to /tmp/public so we never conflict with host permissions or volume locks
+exec hugo server -w --bind 0.0.0.0 --port 1313 --disableFastRender --renderToMemory

@@ -3,8 +3,13 @@ services:
     build: .
     ports:
       - "1313:1313"
+    environment:
+      - HUGO_ENVIRONMENT=development
     volumes:
-      - .:/src                # Mount your source code
-      - /src/node_modules     # Keep node_modules in Docker
-      - /src/public           # Keep public in Docker
-      - /src/resources        # Keep resources in Docker
+      - .:/src
+      # Isolating these keeps the host clean and permissions managed by Docker
+      - /src/node_modules
+      - /src/resources
+      - hugo_cache:/tmp/hugo_cache
+volumes:
+  hugo_cache:

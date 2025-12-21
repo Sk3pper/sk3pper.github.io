@@ -1,13 +1,15 @@
-FROM node:22-bullseye
+# Dockerfile
+FROM node:22-bookworm
 
-ENV HUGO_VERSION=0.146.0
-ENV GO_VERSION=1.25.5
+# Use arguments for versioning so they can be overridden if needed
+ARG HUGO_VERSION=0.146.0
+ARG GO_VERSION=1.25.5
+
 ENV PATH=$PATH:/usr/local/go/bin
 ENV HUGO_CACHEDIR=/tmp/hugo_cache
 
-# Silence npm noise
-ENV NPM_CONFIG_FUND=false
-ENV NPM_CONFIG_UPDATE_NOTIFIER=false
+# Security: Disable NPM scripts by default to block install-time malware
+ENV NPM_CONFIG_IGNORE_SCRIPTS=true
 
 # 1. Install Go
 RUN curl -OL https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz && \
@@ -22,12 +24,13 @@ RUN apt-get update && apt-get install -y git && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# 3. Update NPM
-RUN npm install -g npm@latest
-
-# 4. Setup Permissions
+# 3. Setup Permissions
 WORKDIR /src
-RUN mkdir -p /src/node_modules /src/public /src/resources /tmp/hugo_cache && \
+
+# Create these folders so they are owned by 'node' before mounting
+RUN mkdir -p /src/node_modules \ 
+             /src/resources \
+             /tmp/hugo_cache && \
     chown -R node:node /src /tmp/hugo_cache
 
 COPY --chown=node:node entrypoint.sh /usr/local/bin/entrypoint.sh
