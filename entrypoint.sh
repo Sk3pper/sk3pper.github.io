@@ -20,7 +20,7 @@ npm install
 echo ""
 echo "-------------------------------------------------------"
 echo "STEP 3: Securing Dependencies"
-echo "Description: Running 'npm audit fix --force' to resolve vulnerabilities..."
+echo "Description: Running 'npm audit fix' to resolve vulnerabilities..."
 echo "-------------------------------------------------------"
 npm audit fix
 

@@ -1,0 +1,10 @@
+services:
+  hugo:
+    build: .
+    ports:
+      - "1313:1313"
+    volumes:
+      - .:/src                # Mount your source code
+      - /src/node_modules     # Keep node_modules in Docker
+      - /src/public           # Keep public in Docker
+      - /src/resources        # Keep resources in Docker
