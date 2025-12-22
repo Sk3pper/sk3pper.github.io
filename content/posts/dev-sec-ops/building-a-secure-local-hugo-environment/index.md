@@ -15,11 +15,19 @@ menu:
     weight: 10
 ---
 
-{{< alert type="info" >}}
-This article details the specific configuration I use for this site (built with Hugo and the Toha theme). You can find the complete source code for this setup at the end of the post.
-{{< /alert >}}
+I sat down to write a blog post about something else, but I ended up fighting dependency hell instead. 
+
+You know the feeling. You open your IDE to write a simple article, and you remember that your personal site uses npm 🫠 (yes, I know, the original sin is mine).
+
+Suddenly, you remember the news: malicious `preinstall` scripts, supply chain attacks, and worms targeting developers. You look at your `node_modules` folder and realize you can't in good conscience just "run the code" on your machine anymore. I mean, do I really trust the entire dependency tree of a static site theme?
+
+So, the article I planned to write is delayed. Instead, I went down the rabbit hole of engineering a secure, isolated, and clean local development environment for Hugo (and Node apps in general).
+
+If you are also stuck using npm and want to add a necessary layer of security (and sanity) to your local workflow, this is the solution I came up with.
+
 
 # 1. Introduction
+This article details the specific configuration I use for this site (built with Hugo and the Toha theme). You can find the complete source code for this setup at the end of the post.
 
 ## 1.1 The Goal
 
