@@ -72,7 +72,8 @@ brew install coreutils
 
 ```bash
 diskutil umountDisk /dev/diskX
-sudo gdd bs=4M if=ubuntu-24.04-6.17.8-t2-noble.iso of=/dev/diskX conv=fdatasync status=progress```
+sudo gdd bs=4M if=ubuntu-24.04-6.17.8-t2-noble.iso of=/dev/diskX conv=fdatasync status=progress
+```
 
 *Replace `/dev/diskX` with your actual disk identifier (e.g., `/dev/disk4`). **Be extremely careful not to overwrite your internal hard drive.***
 
@@ -209,17 +210,20 @@ After rebooting into Ubuntu, your WiFi will not work yet. We need to install the
 
 ```bash
 sudo mkdir -p /tmp/apple-wifi-efi
-sudo mount /dev/nvme0n1p1 /tmp/apple-wifi-efi```
+sudo mount /dev/nvme0n1p1 /tmp/apple-wifi-efi
+```
 
 3. Run the firmware script:
 
 ```bash
-bash /tmp/apple-wifi-efi/firmware.sh```
+bash /tmp/apple-wifi-efi/firmware.sh
+```
 
 4. Unmount and cleanup:
 
 ```bash
-sudo umount /tmp/apple-wifi-efi```
+sudo umount /tmp/apple-wifi-efi
+```
 
 Reboot your system. WiFi and Bluetooth should now be functional.
 
@@ -234,18 +238,21 @@ If you don't already have the T2 Ubuntu repo (you likely do from the installatio
 2. **Install the daemon:**
 
 ```bash
-sudo apt install t2fanrd```
+sudo apt install t2fanrd
+```
 
 3. **Enable and Start:**
 
 ```bash
-sudo systemctl enable --now t2fanrd```
+sudo systemctl enable --now t2fanrd
+```
 
 4. **Configuration (Optional):**
 The config file is located at `/etc/t2fand.conf`. You can edit this file to change the activating temperature or the fan curve. If you edit it, remember to restart the service:
 
 ```bash
-sudo systemctl restart t2fanrd```
+sudo systemctl restart t2fanrd
+```
 
 *For more details, check the [official Fan Guide](https://wiki.t2linux.org/guides/fan/).*
 
@@ -261,7 +268,8 @@ If your Mac has a Touch Bar, you can install the **tiny-dfr** app to make it use
 Run the following command to update your repositories and install the package:
 
 ```bash
-sudo apt update && sudo apt install tiny-dfr```
+sudo apt update && sudo apt install tiny-dfr
+```
 
 2. **Restart:**
 Make sure you restart your Mac after installing the app for the changes to take effect.
@@ -271,12 +279,14 @@ If you want to make changes to the config for `tiny-dfr`:
 * Copy the default config file:
 
 ```bash
-sudo cp /usr/share/tiny-dfr/config.toml /etc/tiny-dfr/config.toml```
+sudo cp /usr/share/tiny-dfr/config.toml /etc/tiny-dfr/config.toml
+```
 
 * Edit the file using your preferred text editor (like nano):
 
 ```bash
-sudo nano /etc/tiny-dfr/config.toml```
+sudo nano /etc/tiny-dfr/config.toml
+```
 
 Follow the instructions given inside that file to customize your function keys and media controls.
 
