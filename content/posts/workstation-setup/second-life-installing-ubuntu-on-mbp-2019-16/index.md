@@ -291,11 +291,9 @@ sudo nano /etc/tiny-dfr/config.toml
 Follow the instructions given inside that file to customize your function keys and media controls.
 
 # Acknowledgments & Resources
-
-A massive thank you to the [t2linux.org](https://t2linux.org) community. Without their tireless reverse-engineering efforts, this beautiful hardware would be destined for the landfill. Thanks also to Apple for building hardware that lasts, and to Linux for giving us the freedom to use it how we see fit.
+A massive thank you to the [t2linux.org](https://t2linux.org) community. Without their efforts, this hardware would be destined for the landfill. And, of course, a huge thanks to Apple for their generous contribution of 'timeless' hardware that totally isn't designed to become an expensive paperweight the moment a new model drops. Finally, thank you to Linux for giving us the freedom to actually use it how we see fit.
 
 **Official Links:**
-
-* [t2linux.org](https://t2linux.org) - The main hub for Linux on T2 Macs.
-* [Audio Configuration](https://wiki.t2linux.org/guides/audio-config/) - Specific guides for setting up audio on different models.
-* [Fan Control Guide](https://wiki.t2linux.org/guides/fan/) - Official documentation for `t2fanrd`.
+- [t2linux.org](https://t2linux.org) - The main hub for Linux on T2 Macs.
+- [Audio Configuration](https://wiki.t2linux.org/guides/audio-config/) - Specific guides for setting up audio on different models.
+- [Fan Control Guide](https://wiki.t2linux.org/guides/fan/) - Official documentation for `t2fanrd`.

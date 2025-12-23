@@ -225,6 +225,7 @@ If you want to dig deeper into the specific attacks that motivated this architec
 
 **Recent Incidents (2025)**
 - [The "Shai-Hulud" Worm Analysis (Unit 42)](https://unit42.paloaltonetworks.com/npm-supply-chain-attack/)
+- [Sha1-Hulud 2.0 Supply Chain Attack: 25K+ Repos Exposed (Wiz)](https://www.wiz.io/blog/shai-hulud-2-0-ongoing-supply-chain-attack)
 - [AWS Security: Responding to Recent NPM Threats](https://aws.amazon.com/blogs/security/what-aws-security-learned-from-responding-to-recent-npm-supply-chain-threat-campaigns/)
 - [GitLab: Widespread NPM Supply Chain Attack](https://about.gitlab.com/blog/gitlab-discovers-widespread-npm-supply-chain-attack/)
 - [The "Chalk" & "Debug" Compromise (Qualys)](https://blog.qualys.com/vulnerabilities-threat-research/2025/09/10/when-dependencies-turn-dangerous-responding-to-the-npm-supply-chain-attack)
