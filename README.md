@@ -67,15 +67,68 @@ The `entrypoint.sh` script acts as a safeguard:
 To start the development server:
 
 ```bash
-# 1. Build the image
-docker build -t toha-dev .
-
-# 2. Clean up any old "poisoned" volumes (Crucial if permissions break)
-docker compose down --volumes
-
-# 3. Start the server
-docker compose up --build
-
+docker compose up --build hugo
 ```
 
-The local site will be available at `http://localhost:1313`.
+The local site will be available at `http://localhost:1313`
+
+---
+
+## 🔄 Updating Dependencies
+
+The `docker-compose.yaml` includes a dedicated `update` service (gated behind a Docker Compose profile) for safely updating dependencies inside the container and writing the updated lockfiles back to your host.
+
+The `update` service uses `profiles: ["update"]`, which means it is **excluded from `docker compose up` by default** and must be invoked explicitly. This prevents it from running accidentally alongside the dev server.
+
+> **Important:** Because `npm ci` and `go.sum` act as lockfiles, updates only take effect when you explicitly regenerate them and commit the result. The commands below are how you intentionally step outside that lock.
+
+### Update the Toha Theme
+
+```bash
+# Update to the latest release
+docker compose run --rm --entrypoint bash update -c "hugo mod get -u github.com/hugo-toha/toha/v4 && hugo mod tidy"
+
+# Or pin to a specific version
+docker compose run --rm --entrypoint bash update -c "hugo mod get github.com/hugo-toha/toha/v4@v4.13.0 && hugo mod tidy"
+```
+
+This updates `go.mod` and `go.sum`. Verify the change with `git diff go.mod`.
+
+### Update All Go Modules
+
+```bash
+docker compose run --rm --entrypoint bash update -c "hugo mod get -u && hugo mod tidy"
+```
+
+### Update NPM Packages
+
+```bash
+# Update packages
+docker compose run --rm update
+
+# Optionally apply safe vulnerability fixes (semver-compatible only, no breaking changes)
+docker compose run --rm --entrypoint bash update -c "hugo mod npm pack && npm audit fix"
+
+# Check what's still remaining
+docker compose run --rm --entrypoint bash update -c "hugo mod npm pack && npm audit"
+```
+
+This regenerates `package.json` from the theme and updates `package-lock.json` on your host. `npm ci` in the main service will use the new lockfile on the next start.
+
+`npm audit fix` (without `--force`) is safe to run — it only applies semver-compatible patches. If vulnerabilities remain after running it, they are pinned by the theme's transitive dependency tree and require a breaking major version bump to fix. Avoid `npm audit fix --force` as it allows major version upgrades that can break the theme's build pipeline.
+
+### After Any Update
+
+1. Verify the site still works:
+   ```bash
+   docker compose up --build hugo
+   ```
+2. Re-run the audit to check if vulnerabilities were resolved:
+   ```bash
+   docker compose run --rm --entrypoint bash update -c "hugo mod npm pack && npm audit"
+   ```
+3. Commit the updated lockfiles:
+
+### A Note on NPM Audit Warnings
+
+Running `npm audit` may report high severity vulnerabilities in the Toha theme's dependency tree (e.g. `eslint`, `minimatch`, `glob`). These are **build-time only** dev dependencies that never run in a browser or get served to visitors, and the attack vectors (e.g. ReDoS) are not reachable in a local, isolated build container.
