@@ -1,9 +1,9 @@
 # Dockerfile
-FROM node:22-bookworm
+FROM node:24-bookworm
 
 # Use arguments for versioning so they can be overridden if needed
-ARG HUGO_VERSION=0.146.0
-ARG GO_VERSION=1.25.5
+ARG HUGO_VERSION=0.163.0
+ARG GO_VERSION=1.26.4
 
 ENV PATH=$PATH:/usr/local/go/bin
 ENV HUGO_CACHEDIR=/tmp/hugo_cache

@@ -76,44 +76,84 @@ The local site will be available at `http://localhost:1313`
 
 ## 🔄 Updating Dependencies
 
-The `docker-compose.yaml` includes a dedicated `update` service (gated behind a Docker Compose profile) for safely updating dependencies inside the container and writing the updated lockfiles back to your host.
+Dependency updates run inside the same container as the dev server. The commands
+below use `--entrypoint bash` to bypass the container's startup script
+(`entrypoint.sh`), so no dev server is launched and only the requested commands
+run. Thanks to the bind mount (`.:/src`), the regenerated lockfiles
+(`go.mod`, `go.sum`, `package.json`, `package-lock.json`) are written back to
+your host, ready to be committed.
 
-The `update` service uses `profiles: ["update"]`, which means it is **excluded from `docker compose up` by default** and must be invoked explicitly. This prevents it from running accidentally alongside the dev server.
 
-> **Important:** Because `npm ci` and `go.sum` act as lockfiles, updates only take effect when you explicitly regenerate them and commit the result. The commands below are how you intentionally step outside that lock.
+### Update the Toha Theme (Go module + npm lockfile, all in one)
 
-### Update the Toha Theme
+Updating the theme changes more than just the Go module. The theme also declares
+npm dependencies, so a theme update touches **two sets of lockfiles**:
+
+- `go.mod` / `go.sum` — the theme version itself
+- `package.json` / `package-lock.json` — the npm dependencies the theme declares
+
+If you update only the Go module, the npm lockfile is left out of sync and the
+next `npm ci` in the dev service will fail. Run the full chain in one go:
 
 ```bash
 # Update to the latest release
-docker compose run --rm --entrypoint bash update -c "hugo mod get -u github.com/hugo-toha/toha/v4 && hugo mod tidy"
+docker compose run --rm --entrypoint bash hugo -c \
+  "hugo mod get -u github.com/hugo-toha/toha/v4 && hugo mod tidy && hugo mod npm pack && rm -f package-lock.json && npm install"
 
-# Or pin to a specific version
-docker compose run --rm --entrypoint bash update -c "hugo mod get github.com/hugo-toha/toha/v4@v4.13.0 && hugo mod tidy"
+# Or pin to a specific version (replace v4.X.X with the target release)
+docker compose run --rm --entrypoint bash hugo -c \
+  "hugo mod get github.com/hugo-toha/toha/v4@v4.X.X && hugo mod tidy && hugo mod npm pack && rm -f package-lock.json && npm install"
 ```
 
-This updates `go.mod` and `go.sum`. Verify the change with `git diff go.mod`.
+> The commands above already regenerate the npm lockfile: no separate npm step
+> is needed after a theme update.
 
-### Update All Go Modules
+> **Note:** The theme is currently this site's only Go module dependency. If more
+> Hugo modules are added later, `hugo mod get -u` (without arguments) updates all
+> of them at once — followed by the same `hugo mod tidy && hugo mod npm pack &&
+> rm -f package-lock.json && npm install` chain.
+
+#### Update Hugo version if it is necessary
+
+Hugo is pinned in the `Dockerfile`, so the fix is to bump it there and rebuild the image:
+
+1. Edit the `Dockerfile` and update the argument:
+   ```dockerfile
+   ARG HUGO_VERSION=X.YYY.Z
+   ```
+2. Rebuild the image:
+   ```bash
+   docker compose build --no-cache
+   ```
+3. Re-run the site to confirm the warning is gone.
+
+Check the [theme's release notes](https://github.com/hugo-toha/toha/releases) before upgrading — they call out breaking changes, renamed shortcodes, and deprecated configuration keys.
+
+
+
+
+### Refresh NPM Packages Only (audit or patch without a theme update)
+
+Use this when you want to refresh npm dependencies **without changing the theme
+version** (e.g. to pick up patched transitive dependencies or run an audit).
+If you just updated the theme, this step already happened.
+
+The theme declares its npm dependencies in a manifest that `hugo mod npm pack`
+merges into your `package.json`. Running `npm install` afterwards updates
+`package-lock.json` on your host:
 
 ```bash
-docker compose run --rm --entrypoint bash update -c "hugo mod get -u && hugo mod tidy"
-```
-
-### Update NPM Packages
-
-```bash
-# Update packages
-docker compose run --rm update
+# Regenerate package.json from the theme and refresh the lockfile
+docker compose run --rm --entrypoint bash hugo -c "hugo mod npm pack && npm install"
 
 # Optionally apply safe vulnerability fixes (semver-compatible only, no breaking changes)
-docker compose run --rm --entrypoint bash update -c "hugo mod npm pack && npm audit fix"
+docker compose run --rm --entrypoint bash hugo -c "hugo mod npm pack && npm audit fix"
 
 # Check what's still remaining
-docker compose run --rm --entrypoint bash update -c "hugo mod npm pack && npm audit"
+docker compose run --rm --entrypoint bash hugo -c "hugo mod npm pack && npm audit"
 ```
 
-This regenerates `package.json` from the theme and updates `package-lock.json` on your host. `npm ci` in the main service will use the new lockfile on the next start.
+`npm ci` in the main service will use the new lockfile on the next start.
 
 `npm audit fix` (without `--force`) is safe to run — it only applies semver-compatible patches. If vulnerabilities remain after running it, they are pinned by the theme's transitive dependency tree and require a breaking major version bump to fix. Avoid `npm audit fix --force` as it allows major version upgrades that can break the theme's build pipeline.
 
@@ -125,10 +165,7 @@ This regenerates `package.json` from the theme and updates `package-lock.json` o
    ```
 2. Re-run the audit to check if vulnerabilities were resolved:
    ```bash
-   docker compose run --rm --entrypoint bash update -c "hugo mod npm pack && npm audit"
+   docker compose run --rm --entrypoint bash hugo -c "hugo mod npm pack && npm audit"
    ```
-3. Commit the updated lockfiles:
-
-### A Note on NPM Audit Warnings
-
-Running `npm audit` may report high severity vulnerabilities in the Toha theme's dependency tree (e.g. `eslint`, `minimatch`, `glob`). These are **build-time only** dev dependencies that never run in a browser or get served to visitors, and the attack vectors (e.g. ReDoS) are not reachable in a local, isolated build container.
+3. Commit the updated files and if you also bumped Hugo/Go/Node, include the `Dockerfile` and
+   `.github/workflows/*.yaml` (CI pins the same versions).

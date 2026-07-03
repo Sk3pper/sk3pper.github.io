@@ -11,13 +11,5 @@ services:
       - /src/resources
       - hugo_cache:/tmp/hugo_cache
 
-  update:
-    build: .
-    profiles: ["update"]
-    entrypoint: bash -c "hugo mod tidy && hugo mod npm pack && npm update"
-    volumes:
-      - .:/src
-      - hugo_cache:/tmp/hugo_cache
-
 volumes:
   hugo_cache:

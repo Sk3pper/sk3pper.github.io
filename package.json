@@ -60,5 +60,8 @@
     "typeit": "^8.8.7"
   },
   "name": "Sk3pper.github.io",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/hugoautogen"
+  ]
 }
