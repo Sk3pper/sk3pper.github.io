@@ -8,7 +8,7 @@ section:
   template: sections/about.html
 
 # your designation
-designation: Cybersecurity Researcher
+designation: Security Engineer / Researcher
 # your company information
 # company:
 #   name: Example Co.
@@ -36,9 +36,9 @@ socialLinks:
   icon: "fab fa-linkedin"
   url: "https://www.linkedin.com/in/andrea-b-537768116"
 
-- name: Medium
-  icon: "fa-brands fa-medium"
-  url: "https://medium.com/@sk3pper"
+# - name: Medium
+#   icon: "fa-brands fa-medium"
+#   url: "https://medium.com/@sk3pper"
 
 # You can put custom buttons to link your relevant resources.
 # For example, you can put link for your resume.

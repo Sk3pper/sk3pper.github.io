@@ -4,6 +4,7 @@ section:
   id: experiences
   enable: true
   weight: 3
+  
   showOnNavbar: true
   template: sections/experiences.html
   # Can optionally hide the title in sections
@@ -21,15 +22,14 @@ experiences:
     overview: "---------"
 
   positions:
-  - designation: Cybersecurity Researcher
+  - designation: Security Engineer / Researcher
     start: June 2025
     responsibilities:
-    - Conducting research on vulnerabilities and emerging threats in the field of cybersecurity.
-    - Collaborating with the development team to implement product features and integrate security measures.
-    - Identifying, analyzing, and assessing product vulnerabilities.
-    - Designing and implementing countermeasures to mitigate vulnerabilities and improve product resilience.
-    - Creating technical documentation related to identified vulnerabilities and implemented solutions.
-    - Studying and analyzing new security tools and methodologies to enhance the product's capabilities.
+    - Design and build core product security features end to end, bridging offensive insight with software engineering.
+    - Designed and developed from scratch a network topology discovery engine that reconstructs multi-layer network maps from heterogeneous data sources.
+    - Research and design security posture indicators for enterprise environments (e.g. Active Directory).
+    - Identify and analyze product vulnerabilities, then design and implement countermeasures to improve resilience.
+    - Evaluate emerging security tools, techniques and threats, feeding findings back into product capabilities.
 
 - company:
     name: ZTE Cybersecurity Lab
@@ -48,6 +48,7 @@ experiences:
     - Perform cyber security assessment of ZTE products.
     - Identify, analyze, and assess technical and organizational cyber security vulnerabilities. Document and report penetration test results to stakeholders.
     - Study and employ cutting-edge security technology, tools and vulnerabilities.
+    - Co-authored and presented EMFIF2 (Electro-Magnetic Fault Injection Fuzzing ) at Black Hat Europe 2025 Arsenal.
 
 - company:
     name: Konica Minolta Global R&D
@@ -120,8 +121,8 @@ experiences:
     # don't provide end date if you are currently working there. It will be replaced by "Present"
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
-    responsibilities:
-    - Didactic planning
-    - Frontal lessons
-    - Parent interviews
-    - Tests and evaluations of students' skills
+    # responsibilities:
+    # - Didactic planning
+    # - Frontal lessons
+    # - Parent interviews
+    # - Tests and evaluations of students' skills

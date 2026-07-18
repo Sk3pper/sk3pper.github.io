@@ -1,0 +1,12 @@
+section:
+  name: Posts
+  id: featured-posts
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  hideTitle: false
+
+posts:
+  - posts/cve-2024-21626/playing-with-cve-2024-21626
+  - posts/cve-2024-21626/exploring-hidden-vulnerabilities-in-legacy-docker-versions
+  - posts/reverse-engineering/playing-with-unicorn-framework-
