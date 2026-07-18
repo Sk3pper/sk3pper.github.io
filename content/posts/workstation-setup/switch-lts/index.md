@@ -3,7 +3,7 @@ title: "Switch from Mainline to LTS Kernel (T2 MBP19)"
 date: 2026-07-03
 author:
   name: Sk3pper
-# hero: /images/hero.png
+hero: /images/hero.png
 description: Guide to switch from Mainline to LTS Kernel (T2 MBP19)
 theme: Toha
 
