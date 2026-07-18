@@ -3,7 +3,7 @@ title: "Fix Suspend/Lid Close Freeze on T2 MBP 2019 (MBP 16,1)"
 date: 2026-07-03
 author:
   name: Sk3pper
-# hero: /images/hero.png
+hero: /images/hero.png
 description: Guide to fix suspend/lid close freeze on T2 MBP 2019
 theme: Toha
 
