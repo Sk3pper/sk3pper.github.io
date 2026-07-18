@@ -1,5 +1,5 @@
 section:
-  name: Posts
+  name: Top Posts
   id: featured-posts
   enable: true
   weight: 2
