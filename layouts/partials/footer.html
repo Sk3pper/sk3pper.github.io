@@ -17,24 +17,24 @@
 {{ end }}
 
 {{ if $footerEnabled }}
-  {{ $author:= site.Data.author }}
-  {{ if (index site.Data site.Language.Lang).author }}
-    {{ $author = (index site.Data site.Language.Lang).author }}
+  {{ $author:= hugo.Data.author }}
+  {{ if (index hugo.Data site.Language.Lang).author }}
+    {{ $author = (index hugo.Data site.Language.Lang).author }}
   {{ end }}
 
-  {{ $sections:= site.Data.sections }}
-  {{ if (index site.Data site.Language.Lang).sections }}
-    {{ $sections = (index site.Data site.Language.Lang).sections }}
+  {{ $sections:= hugo.Data.sections }}
+  {{ if (index hugo.Data site.Language.Lang).sections }}
+    {{ $sections = (index hugo.Data site.Language.Lang).sections }}
   {{ end }}
 
   {{ $customMenus := site.Params.customMenus }}
-  {{ if (index site.Data site.Language.Lang).site.customMenus }}
-    {{ $customMenus = (index site.Data site.Language.Lang).site.customMenus }}
+  {{ if (index hugo.Data site.Language.Lang).site.customMenus }}
+    {{ $customMenus = (index hugo.Data site.Language.Lang).site.customMenus }}
   {{ end }}
 
   {{ $copyrightNotice := now.Format "2006" | printf "© %s Copyright."}}
-  {{ if (index site.Data site.Language.Lang).site }}
-    {{ $siteConfig := (index site.Data site.Language.Lang).site }}
+  {{ if (index hugo.Data site.Language.Lang).site }}
+    {{ $siteConfig := (index hugo.Data site.Language.Lang).site }}
     {{ if $siteConfig.copyright }}
       {{ $copyrightNotice = $siteConfig.copyright }}
     {{ end }}
@@ -42,7 +42,7 @@
 
 
   {{ $disclaimer := "" }}
-  {{ $siteConfig := (index site.Data site.Language.Lang).site }}
+  {{ $siteConfig := (index hugo.Data site.Language.Lang).site }}
   {{ if $siteConfig.disclaimer }}
     {{ $disclaimer = $siteConfig.disclaimer }}
   {{ end }}
@@ -98,7 +98,7 @@
         {{ end }}
         {{ if (and $contactMeEnabled $author) }}
         <div class="col-md-4 col-sm-12">
-          <h5>{{ i18n "found_me" }}</h5>
+          <h5>{{ i18n "contact_me" }}</h5>
           <ul>
             {{ range $key,$value:= $author.contactInfo }}
               {{ if (eq $key "email") }}
@@ -106,10 +106,12 @@
                   <span><i class="fas fa-envelope"></i></span> <span>{{ $value }}</span>
                 </a></li>
               {{ else if (eq $key "phone") }}
-                <li><span><i class="fas fa-phone-alt"></i></span> <span>{{ $value }}</span></li>
+                <li><a href={{ printf "tel:%s" $value | safeURL }} target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>{{ $value }}</span>
+                </a></li>
               {{ else if (eq $key "linkedin") }}
                 <li><a href={{ printf "https://www.linkedin.com/in/%s" $value }} target="_blank" rel="noopener">
-                  <span><i class="fab fa-linkedin"></i></span> 
+                  <span><i class="fab fa-linkedin"></i></span>
                   <!-- <span>{{ $author.name }}</span> -->
                 </a></li>
               {{ else if (eq $key "github") }}
@@ -120,12 +122,12 @@
               {{ else if (eq $key "researchgate") }}
                 <li><a href={{ printf "https://www.researchgate.net/profile/%s" $value }} target="_blank" rel="noopener">
                   <span><i class="fab fa-researchgate"></i></span> <span>{{ $author.name }}</span>
-                </a></li>      
+                </a></li>
               {{ else if (eq $key "medium") }}
                 <li><a href={{ printf "https://medium.com/@%s" $value }} target="_blank" rel="noopener">
-                  <span><i class="fa-brands fa-medium"></i></span> 
+                  <span><i class="fa-brands fa-medium"></i></span>
                   <!-- <span>{{ $author.name }}</span> -->
-                </a></li>       
+                </a></li>
               {{ else if reflect.IsMap $value }}
                 <li>
                   {{ if (and (isset $value "url") (isset $value "icon"))}}
@@ -221,4 +223,18 @@
     </div>
     {{ end }}
   </footer>
+
+  {{/* Analytics */}}
+  {{ if site.Params.features.analytics.enable }}
+    {{ with site.Params.features.analytics.services.goatCounter }}
+      {{ if .code }}
+        <script data-goatcounter="https://{{ .code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+      {{ end }}
+    {{ end }}
+    {{ with site.Params.features.analytics.services.counterDev }}
+      {{ if .id }}
+        <script src="https://cdn.counter.dev/script.js" data-id="{{ .id }}" data-utcoffset="2"></script>
+      {{ end }}
+    {{ end }}
+  {{ end }}
 {{end}}

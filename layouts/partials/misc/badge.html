@@ -19,23 +19,23 @@
         {{ $leftProgress = sub .percentage 50 }}
     {{ end }}
     <div class="circular-progress {{if $predefinedColor}}{{ .color }}{{end}}">
-    <span class="circular-progress-left">
-        <span
-        class="circular-progress-bar circular-progress-percentage-{{ $leftProgress }}  circular-progress-percentage-50-delay"
-        {{ if not $predefinedColor }}
-            style="border-color: {{.color}};"
-        {{ end }}
-        ></span>
-    </span>
-    <span class="circular-progress-right">
-        <span
-        class="circular-progress-bar circular-progress-percentage-{{ $rightProgress }}"
-        {{ if not $predefinedColor }}
-            style="border-color: {{.color}};"
-        {{ end }}
-        ></span>
-    </span>
-    <div class="circular-progress-value">{{ .name }}</div>
+        <span class="circular-progress-left">
+            <span
+                class="circular-progress-bar circular-progress-percentage-{{ $leftProgress }}  circular-progress-percentage-50-delay"
+                {{ if not $predefinedColor }}
+                style="border-color: {{.color}};"
+                {{ end }}
+            ></span>
+        </span>
+        <span class="circular-progress-right">
+            <span
+                class="circular-progress-bar circular-progress-percentage-{{ $rightProgress }}"
+                {{ if not $predefinedColor }}
+                style="border-color: {{.color}};"
+                {{ end }}
+            ></span>
+        </span>
+        <div class="circular-progress-value">{{ .name }}</div>
     </div>
 {{ end }}
 </div>

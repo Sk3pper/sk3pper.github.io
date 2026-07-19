@@ -1,6 +1,8 @@
 {{/*  variables for enabling/disabling various features  */}}
 {{ $blogEnabled   := site.Params.features.blog.enable   | default false }}
+{{ $blogTitle  := site.Params.features.blog.title | default (i18n "posts") }}
 {{ $notesEnabled  := site.Params.features.notes.enable  | default false }}
+{{ $notesTitle := site.Params.features.notes.title  | default (i18n "notes") }}
 {{ $maxVisibleSections   := site.Params.topNavbar.maxVisibleSections   | default 5 }}
 
 {{/*  keep backward compatibility for blog post  */}}
@@ -11,6 +13,7 @@
 {{/* by default, don't use any logo */}}
 {{ $mainLogo := "" }}
 {{ $invertedLogo := "" }}
+{{ $darkLogo := "" }}
 
 {{/*  if custom logo has been provided, use them  */}}
 {{ if site.Params.logo.main }}
@@ -19,22 +22,33 @@
 {{ if site.Params.logo.inverted }}
   {{ $invertedLogo = site.Params.logo.inverted }}
 {{ end }}
+{{ if site.Params.logo.dark }}
+  {{ $darkLogo = site.Params.logo.dark }}
+{{ end }}
 
 {{/* resize the logos. don't resize svg because it is not supported */}}
 {{ if $mainLogo }}
   {{ $mainLogo = resources.Get $mainLogo}}
-  {{ if and $mainLogo (ne $mainLogo.MediaType.SubType "svg") }}
-    {{ $mainLogo = $mainLogo.Resize "1563x" }}
+  {{ if and $mainLogo (not (or (eq $mainLogo.MediaType.SubType "svg") (eq $mainLogo.MediaType.SubType "gif"))) }}
+    {{ $mainLogo = $mainLogo.Resize "42x" }}
   {{ end }}
   {{ $mainLogo = $mainLogo.RelPermalink}}
 {{ end }}
 
 {{ if $invertedLogo }}
   {{ $invertedLogo = resources.Get $invertedLogo}}
-  {{ if and $invertedLogo (ne $invertedLogo.MediaType.SubType "svg")}}
-    {{ $invertedLogo = $invertedLogo.Resize "1563x" }}
+  {{ if and $invertedLogo (not (or (eq $invertedLogo.MediaType.SubType "svg") (eq $invertedLogo.MediaType.SubType "gif"))) }}
+    {{ $invertedLogo = $invertedLogo.Resize "42x" }}
   {{ end }}
   {{ $invertedLogo = $invertedLogo.RelPermalink}}
+{{ end }}
+
+{{ if $darkLogo }}
+  {{ $darkLogo = resources.Get $darkLogo}}
+  {{ if and $darkLogo (not (or (eq $darkLogo.MediaType.SubType "svg") (eq $darkLogo.MediaType.SubType "gif"))) }}
+    {{ $darkLogo = $darkLogo.Resize "42x" }}
+  {{ end }}
+  {{ $darkLogo = $darkLogo.RelPermalink}}
 {{ end }}
 
 {{ $logo := $mainLogo }}
@@ -43,16 +57,16 @@
 {{ end }}
 
 {{ $customMenus := site.Params.customMenus }}
-{{ if (index site.Data site.Language.Lang).site.customMenus }}
-  {{ $customMenus = (index site.Data site.Language.Lang).site.customMenus }}
+{{ if (index hugo.Data site.Language.Lang).site.customMenus }}
+  {{ $customMenus = (index hugo.Data site.Language.Lang).site.customMenus }}
 {{ end }}
 
-{{ $sections := site.Data.sections }}
-{{ if (index site.Data site.Language.Lang).sections }}
-  {{ $sections = (index site.Data site.Language.Lang).sections }}
+{{ $sections := hugo.Data.sections }}
+{{ if (index hugo.Data site.Language.Lang).sections }}
+  {{ $sections = (index hugo.Data site.Language.Lang).sections }}
 {{ end }}
 
-{{ $navBarTitle := (index site.Data site.Language.Lang).site.navBarTitle }}
+{{ $navBarTitle := (index hugo.Data site.Language.Lang).site.navBarTitle }}
 {{ if not $navBarTitle }}
   {{ $navBarTitle = site.Title }}
 {{ end }}
@@ -83,10 +97,10 @@
 
     <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
       <ul class="nav navbar-nav ms-auto">
-        <!-- edited -->
+        <!-- edited: Home link hidden -->
         <!--<li class="nav-item">
           <a class="nav-link" href="{{ if .IsHome }}#home{{else}}{{ site.BaseURL | relLangURL }}#home{{end}}">{{ i18n "home" }}</a>
-        </li> -->
+        </li>-->
         {{ if $sections }}
           {{ $sectionCount := 1 }}
           {{ range sort $sections "section.weight" }}
@@ -122,12 +136,12 @@
         {{ end }}
         {{ if $blogEnabled }}
           <li class="nav-item">
-            <a class="nav-link" id="blog-link" href="{{ path.Join (site.BaseURL | relLangURL) "posts" }}">{{ i18n "posts" }}</a>
+            <a class="nav-link" id="blog-link" href="{{ path.Join (site.BaseURL | relLangURL) "posts" }}">{{ $blogTitle }}</a>
           </li>
         {{ end }}
         {{ if $notesEnabled }}
           <li class="nav-item">
-            <a class="nav-link" id="note-link" href="{{ path.Join (site.BaseURL | relLangURL) "notes" }}">{{ i18n "notes" }}</a>
+            <a class="nav-link" id="note-link" href="{{ path.Join (site.BaseURL | relLangURL) "notes" }}">{{ $notesTitle }}</a>
           </li>
         {{ end }}
         {{ range $customMenus }}
@@ -140,7 +154,7 @@
         {{ if .IsTranslated }}
           {{ partial "navigators/lang-selector.html" . }}
         {{ end }}
-        {{ if site.Params.features.darkMode.enable }}
+        {{ if or site.Params.features.darkMode.enable site.Params.features.theme.enable }}
           {{ partial "navigators/theme-selector.html" . }}
         {{ end }}
       </ul>
@@ -152,5 +166,8 @@
   {{ end }}
   {{ if $invertedLogo }}
     <img src="{{ $invertedLogo }}" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  {{ end }}
+  {{ if $darkLogo }}
+    <img src="{{ $darkLogo }}" class="d-none" id="dark-logo" alt="Dark Logo">
   {{ end }}
 </nav>

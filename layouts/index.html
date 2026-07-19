@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Locale | default .Site.Language.Lang }}">
   <head>
     <meta name="google-site-verification" content="2L3MUS5slKtF6xreUudgaZHhXV3jZr5pcAmjaukhtZc" />
     <title>{{- .Site.Title -}}</title>
     {{ $siteDescription := .Site.Params.description }}
-    {{ if (index .Site.Data .Site.Language.Lang).site }}
-      {{ $siteConfig := (index .Site.Data .Site.Language.Lang).site }}
+    {{ if (index hugo.Data .Site.Language.Lang).site }}
+      {{ $siteConfig := (index hugo.Data .Site.Language.Lang).site }}
       {{ if $siteConfig.description }}
         {{ $siteDescription = $siteConfig.description }}
       {{ end }}
@@ -18,31 +18,24 @@
     
     <!--================= add analytics if enabled =========================-->
     {{- partial "analytics.html" . -}}
-    <script>
-      theme = localStorage.getItem('darkmode:color-scheme') || 'system';
-      if (theme == 'system') {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          theme = 'dark';
-        } else {
-          theme = 'light';
-        }
-      }
-      document.documentElement.setAttribute('data-theme', theme);
+    {{ with resources.Get "scripts/core/theme-scheme.js" | fingerprint }}
+    <script integrity="{{.Data.Integrity}}">
+     {{ .Content | safeJS }}
     </script>
+    {{ end }}
   </head>
   <body data-bs-spy="scroll" data-bs-target="#top-navbar" data-bs-offset="100">
 
     <!--- NAVBAR ------------------------->
     {{- partial "navigators/navbar.html" . -}}
 
-    <!--- edited -->
-    <!-- ADD HOME SECTION ----------------> 
+    <!--- ADD HOME SECTION ---------------->
     <!-- {{- partial "sections/home.html" . -}} -->
 
     <!--- ADD OPTIONAL SECTIONS ----------->
-    {{ $sections:= site.Data.sections }}
-    {{ if (index site.Data site.Language.Lang).sections }}
-      {{ $sections = (index site.Data site.Language.Lang).sections }}
+    {{ $sections:= hugo.Data.sections }}
+    {{ if (index hugo.Data site.Language.Lang).sections }}
+      {{ $sections = (index hugo.Data site.Language.Lang).sections }}
     {{ end }}
 
     {{ if $sections }}
